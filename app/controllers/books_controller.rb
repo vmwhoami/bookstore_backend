@@ -1,7 +1,6 @@
 class BooksController < ApplicationController
   def index
-    return
-   json: Book.all
+    render json: Book.all
   end
   def new
     @book = Book.new
@@ -9,13 +8,15 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(books_params)
     if @book.save
-      return json: @book
+      render json: @book
+    end
   end
 
   def destroy
     @book = Book.find(params[:id])
     if @book.destroy
-      return json: @book
+      render json: @book
+    end
   end
 
   private 
