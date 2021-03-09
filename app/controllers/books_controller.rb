@@ -21,6 +21,6 @@ class BooksController < ApplicationController
 
   private 
    def books_params
-    params.require(:books).permit(:serialNo, :name, :categories)
+    params.require(:books).permit(:name, :category)
    end
 end
